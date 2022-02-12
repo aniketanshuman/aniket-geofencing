@@ -18,15 +18,18 @@ const Home = (props) => {
       </Head>
       <nav className={styles.nav}>
         <div className={styles.brand}>
-          Location Geofencing 
+          Aniket Geofencing 
         </div>       
       </nav>
 
-      <main className={styles.main}>
+      <main className={styles.mainScreen}>
       
         <h1 className={styles.title}>
-          <b>GeoFencing of Aniket</b>
+          <b>GeoFencing </b>
         </h1>
+
+        <p className={styles.description}>Welcome to the App. We will access your current location and then we will store your details and current location to monitor 
+        your location</p>
 
         <p className={styles.description, styles.redText}>
           Please allow location access to continue
@@ -39,7 +42,7 @@ const Home = (props) => {
   (
     <div className={styles.container}>
       <Head>
-        <title>GeoFence</title>
+        <title>GeoFencing</title>
       </Head>
 
       <nav className={styles.nav}>
