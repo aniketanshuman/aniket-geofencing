@@ -35,8 +35,6 @@ const Home = (props) => {
           Please allow location access to continue
         </p>
       </main>
-
-
     </div>
   ) :
   (
@@ -79,7 +77,7 @@ const Home = (props) => {
                            <div className={styles.row}>
 
                      <div className={styles.col}>
-     
+                     { /* Google Sign-in */}
         {
           !auth.user &&
         <button onClick={(e) => auth.signinwithGoogle()}>Sign In using Google</button>
@@ -93,7 +91,7 @@ const Home = (props) => {
           !auth.user &&
           <>
         
-        <button onClick={(e) => auth.signinwithFacebook()}>Sign In with Facebook</button>
+        <button onClick={(e) => auth.signinwithFacebook()}>Log In with Facebook</button>
         </>
         }
         </div>
@@ -108,7 +106,7 @@ const Home = (props) => {
         </div>
 </div> :  <>
        <div className={styles.card}>
-        <div className='avatar-wrapper' style={{background:`url("${auth.user.photoUrl}")`}}>
+        <div className='avatar-wrapper' style={{backgroundImage:`url("${auth.user.photoUrl}")`,backgroundSize:`cover`,backgroundRepeat:`no-repeat`}}>
 
         </div>
           <p className='user-info'>
@@ -118,40 +116,15 @@ const Home = (props) => {
           <button className='save-btn' onClick={e=>{
             editLocation(auth.user.uid, props.coords?.latitude, props.coords?.longitude )
             setNotify(true);
-            }}>Save Location</button>
+            }}>Save My Location</button>
          <div className={styles.successText}>   {notify && <span className='success-text'>
            Your current location has been stored</span>}</div>
-           <button onClick={(e) => auth.signout()}>Sign Out</button>
+           <button className='sign-out-btn' onClick={(e) => auth.signout()}>Sign Out</button>
           </div>
           
         
        </>
           }
-
-       { /* Google Sign-in */}
-       
-        
-          {/* {auth.user && 
-        <>
-        <div className='avatar-wrapper' style={{background:`url("${auth.user.photoUrl}")`}}>
-
-        </div>
-          <p className='user-info'>
-           You are right now signed in as {auth.user.email}
-          </p>
-          
-          <button className='save-btn' onClick={e=>{
-            editLocation(auth.user.uid, props.coords?.latitude, props.coords?.longitude )
-            setNotify(true);
-            }}>Save Location</button>
-            {notify && <span className='success-text'>
-           Your current location has been stored</span>}
-          </>
-          } */}
-          
-        
-            
-      
       </main>
 
     </div>

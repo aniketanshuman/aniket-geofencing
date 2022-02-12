@@ -44,10 +44,23 @@ table{
   color: #363636;
 }
 
+.sign-out-btn{
+  font-size: 1.4rem;
+  padding: 0.5rem 1.4rem;
+  margin: 1rem;
+  color: #fff;
+  background-color: #c9320c;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+
+}
+
 .save-btn{
   font-size: 1.2rem;
-  color: cornflowerblue;
-  background-color: #eef;
+  color: rgb(55, 233, 10);
+  background-color: ghostwhite;
   font-weight: 700;
 }
 
